@@ -1,0 +1,7 @@
+sudo apt install ruby -y
+wget https://aws-codedeploy-${AWS_REGION}.s3.${AWS_REGION}.amazonaws.com/latest/install
+sudo chmod +x ./install
+sudo ./install auto
+sudo systemctl enable codedeploy-agent
+sudo systemctl start codedeploy-agent
+sudo systemctl status codedeploy-agent
