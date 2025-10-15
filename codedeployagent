@@ -1,7 +1,18 @@
-sudo apt install ruby -y
-wget https://aws-codedeploy-${AWS_REGION}.s3.${AWS_REGION}.amazonaws.com/latest/install
-sudo chmod +x ./install
+# Update system packages
+sudo apt update && sudo apt upgrade -y
+
+# Install required dependencies
+sudo apt install ruby-full wget -y
+
+# Download the CodeDeploy agent installer
+cd /home/ubuntu
+wget https://aws-codedeploy-<region>.s3.<region>.amazonaws.com/latest/install
+
+# Make the installer executable
+chmod +x ./install
+
+# Run the installer
 sudo ./install auto
-sudo systemctl enable codedeploy-agent
-sudo systemctl start codedeploy-agent
+
+# Check the agent status
 sudo systemctl status codedeploy-agent
