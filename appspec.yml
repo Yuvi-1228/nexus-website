@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /nexus-website/
+  - source: /
     destination: /var/www/html/nexus-website/
 permissions:
   - object: /var/www/html/nexus-website/
